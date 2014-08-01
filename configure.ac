@@ -12,8 +12,7 @@ AC_CONFIG_AUX_DIR(autoconf)             # (directory containing auxillary build 
 AM_INIT_AUTOMAKE(hercules,4.00)         # (the version of our software package)
 AC_CONFIG_HEADERS(config.h)             # (the file the resulting configure script will produce)
 AM_MAINTAINER_MODE()
-AC_CANONICAL_HOST()                     # (sets $host_cpu, $host_vendor, and $host_os)
-AC_CANONICAL_TARGET()                   # (sets $target_cpu, $target_vendor, and $target_os)
+AC_CANONICAL_SYSTEM()                   # (sets ${host,build,target}_{cpu,vendor,os}
 
 ###############################################################################
 #   Programs section...
@@ -533,6 +532,7 @@ AC_CHECK_HEADERS( net/route.h,    [hc_cv_have_net_route_h=yes],    [hc_cv_have_n
 AC_CHECK_HEADERS( arpa/inet.h,    [hc_cv_have_arpa_inet_h=yes],    [hc_cv_have_arpa_inet_h=no]    )
 AC_CHECK_HEADERS( linux/if_tun.h, [hc_cv_have_linux_if_tun_h=yes], [hc_cv_have_linux_if_tun_h=no] )
 AC_CHECK_HEADERS( sys/ioctl.h,    [hc_cv_have_sys_ioctl_h=yes],    [hc_cv_have_sys_ioctl_h=no]    )
+AC_CHECK_HEADERS( ifaddrs.h,      [hc_cv_have_ifaddrs_h=yes],      [hc_cv_have_ifaddrs_h=no]      )
 
 #------------------------------------------------------------------------------
 #  PROGRAMMING NOTE: On Linux struct in6_ifreq is defined in linux/ipv6.h.

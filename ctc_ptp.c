@@ -25,7 +25,9 @@
 #include "herc_getopt.h"    /* getopt dynamic linking kludge */
 
 #if !defined(OPTION_W32_CTCI)
-#include <ifaddrs.h>
+// we need ifaddrs.h, but we have to use our own version of it
+// so we can handle it if our system does not supply ifaddrs
+#include "hifaddrs.h"
 #endif /* !defined(OPTION_W32_CTCI) */
 
 

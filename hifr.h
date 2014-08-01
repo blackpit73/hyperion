@@ -48,7 +48,10 @@
 //---------------------------------------------------------------------
 
 #if defined(ENABLE_IPV6)
-  #if defined(HAVE_IN6_IFREQ_IFR6_ADDR)
+  // blackpit73: configure.ac generates HAVE_STRUCT_IN6_IFREQ_IFR6_ADDR;
+  // is it really named HAVE_IN6_IFREQ_IFR6_ADDR anywhere?!?!
+  // TODO: check and remove HAVE_IN6_IFREQ_IFR6_ADDR if possible
+  #if defined(HAVE_STRUCT_IN6_IFREQ_IFR6_ADDR) || defined(HAVE_IN6_IFREQ_IFR6_ADDR)
     #if defined(HAVE_LINUX_IPV6_H)
       #include <linux/ipv6.h>
     #elif defined(HAVE_NETINET6_IN6_VAR_H)
